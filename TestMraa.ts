@@ -13,7 +13,7 @@ eval(col);
 
 console.log(mraa.getVersion())
 
-var myLed = new mraa.Gpio(mraa.Dir.OUT); //LED hooked up to digital pin 13 (or built in pin on Galileo Gen1 & Gen2)
+var myLed = new mraa.Gpio(mraa.Dir.DIR_OUT); //LED hooked up to digital pin 13 (or built in pin on Galileo Gen1 & Gen2)
 myLed.dir(1); //set the gpio direction to output
 var ledState = true; //Boolean to hold the state of Led
 
