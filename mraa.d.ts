@@ -13,12 +13,18 @@ declare module "mraa" {
         function adcSupportedBits():number
         function getPlatformName():string
         function setLogLevel(level:number):number
+        export enum Dir{
+            OUT      = 0, /**< Output. A Mode can also be set */
+            IN       = 1, /**< Input */
+            OUT_HIGH = 2, /**< Output. Init High */
+            OUT_LOW  = 3  /**< Output. Init Low */
+        }
         export class Gpio {
             constructor(pin:number);
             constructor(pin:number, owner:boolean, raw:boolean);
             edge(number):number;
             mode(mode:number):number;
-            dir(mode:number):number;
+            dir(mode:Dir):number;
             read():number;
             write(number):number;
             useMmap(boolean):number;
